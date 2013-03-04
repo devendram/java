@@ -34,39 +34,15 @@ public class MainActivity extends Activity {
 
 	Pubnub pubnub = new Pubnub("demo", "demo", "", false);
 
-	private void notifyUser(Object message) {
+	private void notifyUser(final Object message) {
 		try {
-			if (message instanceof JSONObject) {
-				final JSONObject obj = (JSONObject) message;
-				this.runOnUiThread(new Runnable() {
-					public void run() {
-						Toast.makeText(getApplicationContext(), obj.toString(),
-								Toast.LENGTH_LONG).show();
-
-						Log.i("Received msg : ", String.valueOf(obj));
-					}
-				});
-
-			} else if (message instanceof String) {
-				final String obj = (String) message;
-				this.runOnUiThread(new Runnable() {
-					public void run() {
-						Toast.makeText(getApplicationContext(), obj,
-								Toast.LENGTH_LONG).show();
-						Log.i("Received msg : ", obj.toString());
-					}
-				});
-
-			} else if (message instanceof JSONArray) {
-				final JSONArray obj = (JSONArray) message;
-				this.runOnUiThread(new Runnable() {
-					public void run() {
-						Toast.makeText(getApplicationContext(), obj.toString(),
-								Toast.LENGTH_LONG).show();
-						Log.i("Received msg : ", obj.toString());
-					}
-				});
-			}
+			this.runOnUiThread(new Runnable() {
+				public void run() {
+					Toast.makeText(getApplicationContext(), message.toString(),
+							Toast.LENGTH_LONG).show();
+					Log.i("Received msg : ", message.toString());
+				}
+			});
 
 		} catch (Exception e) {
 			e.printStackTrace();
