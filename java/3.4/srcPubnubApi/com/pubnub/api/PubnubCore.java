@@ -1055,10 +1055,10 @@ abstract class PubnubCore {
                             log.verbose("Timetoken value set to " + _timetoken);
                             _saved_timetoken = "0";
                             log.verbose("Saved Timetoken reset to 0");
-                            if (!hreq.isDar()) {
-                            	subscriptions.invokeConnectCallbackOnChannels(_timetoken);
-                            } else {
+                            if (hreq.isDar() && hreq.isSubzero()) {
                             	subscriptions.invokeReconnectCallbackOnChannels(_timetoken);
+                            } else {
+                            	subscriptions.invokeConnectCallbackOnChannels(_timetoken);
                             }
                             JSONArray messages = new JSONArray(jsa.get(0)
                                     .toString());
