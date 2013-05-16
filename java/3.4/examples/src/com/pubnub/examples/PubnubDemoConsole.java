@@ -221,7 +221,7 @@ public class PubnubDemoConsole {
         } else {
             System.out.println("Cipher Key = " + this.cipher_key);
             pubnub = new Pubnub("demo", "demo", "demo", this.cipher_key,
-                    this.SSL);
+                     "testauthkey", this.SSL);
         }
 
         displayMenuOptions();
@@ -363,7 +363,7 @@ public class PubnubDemoConsole {
         System.out.println("ENTER 14 FOR Setting Retry Interval");
         System.out.println("ENTER 15 FOR Setting Subscribe Timeout");
         System.out.println("ENTER 16 FOR Setting Non Subscribe Timeout");
-        System.out.println("ENTER 17 FOR Setting/Unsetting auth key1");
+        System.out.println("ENTER 17 FOR Setting/Unsetting auth key");
         System.out.println("\nENTER 0 to display this menu");
     }
 

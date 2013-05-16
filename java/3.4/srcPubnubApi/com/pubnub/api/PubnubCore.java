@@ -1320,7 +1320,8 @@ abstract class PubnubCore {
     /**
      * This method sets auth key.
      *
-     * @param Auth Key. 0 length string or null unsets auth key
+     * @param authKey .
+     *             Auth key. 0 length string or null unsets auth key
      */
     public void setAuthKey(String authKey) {
 

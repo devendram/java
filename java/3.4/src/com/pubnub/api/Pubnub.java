@@ -39,6 +39,28 @@ public class Pubnub extends PubnubCore {
      *            Subscribe Key
      * @param secret_key
      *            Secret Key
+     * @param cipher_key
+     *            Cipher Key
+     * @param auth_key
+     *            Auth Key
+     * @param ssl_on
+     *            SSL on ?
+     */
+    public Pubnub(String publish_key, String subscribe_key, String secret_key, String cipher_key,
+            String auth_key, boolean ssl_on) {
+        super(publish_key, subscribe_key, secret_key, cipher_key, ssl_on);
+        setAuthKey(auth_key);
+    }
+
+    /**
+     * Pubnub Constructor
+     *
+     * @param publish_key
+     *            Publish key
+     * @param subscribe_key
+     *            Subscribe Key
+     * @param secret_key
+     *            Secret Key
      * @param ssl_on
      *            SSL on ?
      */

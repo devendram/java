@@ -10,6 +10,12 @@ public class Pubnub extends PubnubCore {
         super(publish_key, subscribe_key, secret_key, cipher_key, ssl_on);
     }
 
+    public Pubnub(String publish_key, String subscribe_key, String secret_key, String cipher_key,
+            String auth_key, boolean ssl_on) {
+        super(publish_key, subscribe_key, secret_key, cipher_key, ssl_on);
+        setAuthKey(auth_key);
+    }
+
     public Pubnub(String publish_key, String subscribe_key, String secret_key,
             boolean ssl_on) {
         super(publish_key, subscribe_key, secret_key, "", ssl_on);
